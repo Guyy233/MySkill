@@ -1,0 +1,4 @@
+interface:
+  display_name: "上传 Skill 到 MySkill"
+  short_description: "将已完成 skill 整理并上传到 MySkill 仓库"
+  default_prompt: "使用 $publish-skill-to-myskill 将一个已经完成的 skill 整理后上传到我的 MySkill GitHub 仓库。"
