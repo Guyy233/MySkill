@@ -1,0 +1,4 @@
+interface:
+  display_name: "学生项目日志"
+  short_description: "整理学生项目中文进展、阶段总结与备份记录"
+  default_prompt: "使用 $student-progress-log 整理并更新这个项目的中文 progress.md，必要时补写历史阶段总结。"

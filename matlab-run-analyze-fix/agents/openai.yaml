@@ -1,0 +1,7 @@
+﻿interface:
+  display_name: "MATLAB Run Analyze Fix"
+  short_description: "Run MATLAB, save plots, inspect outputs, and fix code."
+  default_prompt: "Use $matlab-run-analyze-fix to run MATLAB code, save figures, analyze results, and iteratively fix the implementation."
+
+policy:
+  allow_implicit_invocation: true
