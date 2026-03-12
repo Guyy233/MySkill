@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git Push 故障修复"
+  short_description: "排查网络并修复后重试 Git 上传的稳定流程"
+  default_prompt: "使用 $git-push-recover 在 git push 失败后定位网络问题、修复代理配置并完成重试上传。"
