@@ -1,0 +1,20 @@
+﻿OK|Part-I|中转英|prompt
+OK|Part-I|英转中|prompt
+OK|Part-I|中转中|prompt
+OK|Part-I|缩写|prompt
+OK|Part-I|扩写|prompt
+OK|Part-I|表达润色（英文论文）|prompt
+OK|Part-I|表达润色（中文论文）|prompt
+OK|Part-I|逻辑检查|prompt
+OK|Part-I|去 AI 味（LaTeX 英文）|prompt
+OK|Part-I|去 AI 味（Word 中文）|prompt
+OK|Part-I|论文架构图|prompt
+OK|Part-I|实验绘图推荐|prompt
+OK|Part-I|生成图的标题|prompt
+OK|Part-I|生成表的标题|prompt
+OK|Part-I|实验分析|prompt
+OK|Part-I|论文整体以 Reviewer 视角进行审视|prompt
+OK|Part-I|模型选择|section-only
+OK|Part-II|Skills 的配置|section
+OK|Part-II|Skills 总览|section
+OK|Part-II|使用场景与示例 Prompt|section

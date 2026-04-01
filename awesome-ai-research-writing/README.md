@@ -1,23 +1,35 @@
 ﻿# awesome-ai-research-writing
 
-这是一个面向 AI/ML 研究论文写作的 skill，基于 `Leey21/awesome-ai-research-writing` 的公开思路整理。
+这是一个论文写作编排 skill。它把本地 Prompt 库和外部 5 个技能串在一起，用于 AI/ML 论文从草稿到投稿前检查的完整流程。
 
 ## 用途
 
-帮助把研究想法转成论文文本，并支持从大纲、初稿、润色到审稿回复的完整迭代。
+把研究想法转成可投稿文本，并在翻译、润色、逻辑检查、图表标题、审稿视角复核之间做自动路由。
 
-## 适用场景
+## 已落地内容
 
-- 从零搭建机器学习论文结构
-- 重写摘要、引言、方法、实验和结论
-- 统一学术表达风格并减少口语化
-- 根据 reviewer 意见做针对性修订
+- 本地 Prompt 全集：`awesome-ai-research-writing-prompts/`
+- Part I 16 条可直接调用 Prompt：`awesome-ai-research-writing-prompts/Part-I/*.prompt.md`
+- Part II 技能说明与示例：`awesome-ai-research-writing-prompts/Part-II/*.md`
+- 调用入口：`SKILL.md`
+
+## 联动技能
+
+- `20-ml-paper-writing`
+- `humanizer`
+- `docx`
+- `doc-coauthoring`
+- `canvas-design`
 
 ## 主要文件
 
-- `SKILL.md`：技能主体流程与质量约束
+- `SKILL.md`
+- `awesome-ai-research-writing-prompts/目录索引.md`
+- `awesome-ai-research-writing-prompts/README_source.md`
 
 ## 来源
 
 - [Leey21/awesome-ai-research-writing](https://github.com/Leey21/awesome-ai-research-writing)
-- [Orchestra-Research/AI-Research-SKILLs/20-ml-paper-writing](https://github.com/Orchestra-Research/AI-Research-SKILLs/tree/main/20-ml-paper-writing)
+- [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-research-SKILLs)
+- [blader/humanizer](https://github.com/blader/humanizer)
+- [anthropics/skills](https://github.com/anthropics/skills)

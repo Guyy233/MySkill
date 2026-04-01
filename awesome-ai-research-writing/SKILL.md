@@ -1,56 +1,64 @@
 ﻿---
 name: awesome-ai-research-writing
-description: 基于 Leey21/awesome-ai-research-writing 的研究论文写作技能，面向机器学习论文的选题、结构化写作、学术表达和审稿反馈迭代。
+description: 基于本地 Prompt 库与 5 个外部写作技能的论文写作编排器。用于在中文/英文学术写作、润色、审稿视角检查、图表标题生成与投稿前检查之间做自动路由。
 ---
 
-# AI 研究写作 Skill
+# Awesome AI Research Writing Orchestrator
 
-这个 skill 用来把“研究想法”推进成“可投稿的论文文本”。
+这个 skill 不是单一 prompt，而是一个本地路由层。它把 `awesome-ai-research-writing-prompts` 里的 Prompt 原文和外部 skills 串起来，让同一次对话可以按场景自动切换。
 
-## 适用任务
+## 本地资源
 
-当用户要做以下任务时启用：
-- 从研究想法生成论文结构
-- 撰写或改写机器学习论文段落
-- 强化实验叙事与贡献表达
-- 根据审稿意见修改论文并准备 rebuttal
+- Prompt 总库：`awesome-ai-research-writing-prompts/`
+- Part I Prompt 原文：`awesome-ai-research-writing-prompts/Part-I/*.prompt.md`
+- Part II 技能说明：`awesome-ai-research-writing-prompts/Part-II/*.md`
+- 索引：`awesome-ai-research-writing-prompts/目录索引.md`
 
-## 输入要求
+## 调用总原则
 
-启动时先收集这些信息：
-- 研究问题与核心假设
-- 方法要点与关键创新
-- 实验设置、主要结果、对比基线
-- 目标会议或期刊（如果已确定）
-- 当前阶段（大纲、初稿、润色、返修）
+1. 先识别用户意图，再路由到对应 `.prompt.md`。
+2. 一旦选中 prompt，优先保留其约束和输出结构，不随意改写格式。
+3. 如果任务超出单条 prompt 范围，切换到对应外部 skill 处理。
+4. 涉及完整论文工程时，优先调用 `20-ml-paper-writing`，再按需叠加其他 skill。
 
-如果信息不全，先列缺口，再给最小可执行版本。
+## Prompt 路由
 
-## 执行流程
+- 中转英：`Part-I/01-中转英.prompt.md`
+- 英转中：`Part-I/02-英转中.prompt.md`
+- 中转中：`Part-I/03-中转中.prompt.md`
+- 缩写：`Part-I/04-缩写.prompt.md`
+- 扩写：`Part-I/05-扩写.prompt.md`
+- 表达润色（英文论文）：`Part-I/06-表达润色（英文论文）.prompt.md`
+- 表达润色（中文论文）：`Part-I/07-表达润色（中文论文）.prompt.md`
+- 逻辑检查：`Part-I/08-逻辑检查.prompt.md`
+- 去 AI 味（LaTeX 英文）：`Part-I/09-去-AI-味（LaTeX-英文）.prompt.md`
+- 去 AI 味（Word 中文）：`Part-I/10-去-AI-味（Word-中文）.prompt.md`
+- 论文架构图：`Part-I/11-论文架构图.prompt.md`
+- 实验绘图推荐：`Part-I/12-实验绘图推荐.prompt.md`
+- 生成图的标题：`Part-I/13-生成图的标题.prompt.md`
+- 生成表的标题：`Part-I/14-生成表的标题.prompt.md`
+- 实验分析：`Part-I/15-实验分析.prompt.md`
+- Reviewer 视角整稿审视：`Part-I/16-论文整体以-Reviewer-视角进行审视.prompt.md`
+- 模型选择参考：`Part-I/17-模型选择.section.md`
 
-1. 问题与贡献定位：给出一句话问题定义、三句话贡献摘要。
-2. 论文骨架搭建：输出标题候选、摘要草稿、章节树。
-3. 段落级写作：按“主张 -> 证据 -> 结论”生成可直接粘贴的段落。
-4. 学术表达修整：去口语化，压缩冗余，统一术语与符号。
-5. 审稿视角复检：从 novelty、soundness、clarity、reproducibility 四维给出风险清单和修订动作。
+## 外部 Skill 联动
 
-## 输出规范
+- `20-ml-paper-writing`：整篇论文起稿、模板切换、引用核验、投稿 checklist。
+- `humanizer`：去 AI 味和语言自然化，适合终稿前通读。
+- `docx`：Word 模板填充、`.docx` 编辑、批注与修订痕迹。
+- `doc-coauthoring`：按阶段协作写作，先上下文再分节迭代。
+- `canvas-design`：概念图、框架图、示意图的视觉设计产出。
 
-默认给出以下结构化结果：
-- `Summary`: 本轮改写目标与完成情况
-- `Paper Text`: 可直接使用的正文内容
-- `Reviewer Risks`: 可能被质疑的点
-- `Next Edits`: 下一轮 3-5 个具体动作
+## 推荐调用顺序
 
-## 质量约束
+1. 单段文字任务：直接走 Part I 对应 prompt。
+2. 单章节或多轮改写：先用 Part I 草稿，再切 `doc-coauthoring` 打磨。
+3. 整篇论文：先 `20-ml-paper-writing`，再用 Part I 做局部增强。
+4. 投稿前终检：`逻辑检查` + `humanizer` + `Reviewer 视角整稿审视`。
+5. Word 交付：在 `docx` 里做最终模板替换与导出。
 
-- 不编造实验结果、数据集或引用。
-- 结论必须和证据对齐，不能超出实验支持范围。
-- 术语第一次出现时给出定义，后续保持一致。
-- 公式、图表、表格在文中必须有明确指代。
+## 输出要求
 
-## 来源说明
-
-本 skill 由以下公开仓库思路整理而成：
-- https://github.com/Leey21/awesome-ai-research-writing
-- https://github.com/Orchestra-Research/AI-Research-SKILLs/tree/main/20-ml-paper-writing
+- 明确说明本轮实际调用了哪个 prompt 或 skill。
+- 保留原文中的技术名词、实验事实和数值，不编造引用。
+- 如果引用无法核验，必须显式标记为待核验，不得伪造。
