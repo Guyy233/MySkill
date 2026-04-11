@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Paper Reading HTML"
+  short_description: "Turn papers into guided-reading HTML pages."
+  default_prompt: "Use $paper-reading-html to turn this paper into a two-board reading page: an original guided-reading board with paragraphs, figures, and formulas kept visible, plus a separate whole-paper interpretation board."

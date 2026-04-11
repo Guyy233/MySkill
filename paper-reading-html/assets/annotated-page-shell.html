@@ -1,0 +1,65 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{paper_title}} - Annotated Reading</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="title-wrap">
+        <p class="kicker">Paper Reading HTML</p>
+        <h1>{{paper_title}}</h1>
+        <p class="meta">{{paper_meta}}</p>
+      </div>
+    </header>
+
+    <aside class="toc">
+      <!-- Sticky chapter navigation -->
+    </aside>
+
+    <main>
+      <section id="guided-reading" class="board board-guided">
+        <header class="board-head">
+          <h2>Board 1: Original Guided Reading</h2>
+          <p>Reconstruct the source in reading order. Keep paragraphs, formulas, figures, and captions visible in the source column, then explain them block by block.</p>
+        </header>
+
+        <article class="reading-unit">
+          <div class="cols cols-2-or-3">
+            <div class="col source-col">
+              <!-- Heading / paragraph / figure / caption / formula -->
+            </div>
+
+            <div class="col translation-col">
+              <!-- Only render when the source is mainly English -->
+            </div>
+
+            <div class="col commentary-col">
+              <!-- Paragraph-by-paragraph guided reading -->
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="document-interpretation" class="board board-interpretation">
+        <header class="board-head">
+          <h2>Board 2: Document Interpretation</h2>
+          <p>Explain the whole paper as an argument: thesis, method chain, evidence chain, limits, and final takeaway.</p>
+        </header>
+
+        <div class="interpretation-grid">
+          <!-- Thesis / logic map / evidence / limit / takeaway -->
+        </div>
+      </section>
+
+      <section id="worksheet" class="worksheet">
+        <!-- Optional end-of-page worksheet and memory cards -->
+      </section>
+    </main>
+
+    <aside id="term-drawer" class="term-drawer" hidden>
+      <!-- Click-to-explain terminology drawer -->
+    </aside>
+  </body>
+</html>
