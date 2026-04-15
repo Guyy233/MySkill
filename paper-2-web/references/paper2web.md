@@ -185,3 +185,16 @@ Paper2Web can be combined with:
 - **Paper2Video**: Generate companion video for the website
 - **Paper2Poster**: Create matching poster design
 - **AutoPR**: Generate promotional content linking to website
+
+## Annotation-First Variant
+
+Besides the standard academic homepage flow, Paper2Web can also be used to generate an **annotation-first reading page**.
+
+In this variant:
+- the original text stays visible
+- the explanation is aligned paragraph by paragraph
+- a Chinese translation column is inserted when the source is mainly English
+- formulas should be reconstructed into readable LaTeX
+- important terms should be clickable for explanation
+
+See `references/annotation_mode.md` for the concrete structure.

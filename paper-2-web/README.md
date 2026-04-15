@@ -64,3 +64,24 @@ output/paper_name/website/
 
 - 上游 skill 仓库：[Sologa/codex-pipeline](https://github.com/Sologa/codex-pipeline)
 - 底层项目：[YuhangChen1/Paper2All](https://github.com/YuhangChen1/Paper2All)
+
+## 新增模式：批注式网页
+
+现在这个 skill 额外支持 **批注式网页模式**。这不是传统的论文宣传页，而是面向阅读、讲解、结题整理的学习型网页。
+
+这种模式下，页面结构默认改成：
+
+- 左栏放 **原文**
+- 右栏放 **解释**
+- 如果原文主体是英文，则在中间增加 **中文翻译栏**
+- 对检测到的公式，优先改写成 **LaTeX** 并在网页里可读渲染
+- 对关键术语，提供 **点击释义**
+
+这一模式尤其适合：
+
+- 论文精读
+- 结题材料整理
+- 答辩前复盘
+- 把 PDF 论文改成可逐段阅读的 HTML 注释页
+
+具体规则见 [references/annotation_mode.md](references/annotation_mode.md)。
