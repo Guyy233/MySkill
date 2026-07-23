@@ -1,4 +1,4 @@
-﻿---
+---
 name: awesome-ai-research-writing
 description: 论文写作总路由器。根据用户输入自动选择 Part-I Prompt 或 20-ml-paper-writing/humanizer/docx/doc-coauthoring/canvas-design，并支持多技能串联执行。
 ---

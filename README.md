@@ -2,11 +2,15 @@
 
 这是我的 Codex Skills 仓库，用来集中保存常用的可复用技能。
 
-## 仓库说明
+## 仓库结构
 
-本仓库按“每个 skill 一个文件夹”的方式整理，便于浏览、备份与维护。
+每个 skill 始终保留自己的独立目录和 `SKILL.md`。为了便于浏览，相关 skill 可以放进分类目录，但分类目录本身不作为 skill：
 
-每个 skill 文件夹通常包含：
+- `paper-skills/`：论文阅读、写作和成果展示相关 skills
+- 根目录下的其他 skill：通用文档、实验、项目记录和 GitHub 运维能力
+
+每个独立 skill 通常包含：
+
 - `SKILL.md`：skill 主体说明
 - `README.md`：面向 GitHub 的简介
 - `agents/`：可选，skill 元数据
@@ -14,58 +18,44 @@
 - `references/`：可选，参考资料
 - `assets/`：可选，附加资源
 
-## 当前收录的 Skills
+## 论文相关 Skills
 
-### 1. `doc`
-用于处理 `.docx` 文档，包括创建、编辑、调整格式和检查内容。
+论文类 skill 统一收录在 [`paper-skills/`](paper-skills/) 中，仍然可以分别安装和调用。
 
-### 2. `gh-fix-ci`
-用于排查和修复 GitHub Actions 中失败的 CI 检查。
+1. [`awesome-ai-research-writing`](paper-skills/awesome-ai-research-writing/)：论文写作总路由器，根据任务选择段落 Prompt 或其他写作 skill。
+2. [`20-ml-paper-writing`](paper-skills/20-ml-paper-writing/)：面向 NeurIPS、ICML、ICLR、ACL、AAAI、COLM 和系统会议的完整论文写作与投稿流程。
+3. [`论文分析`](paper-skills/论文分析/)：把论文加工成中文带读手册和中英对照三色批注译文。
+4. [`paper-reading-html`](paper-skills/paper-reading-html/)：把论文整理成保留原文、图和公式的精读型 HTML 页面。
+5. [`paper-2-web`](paper-skills/paper-2-web/)：把论文转成项目网站、展示视频或会议海报。
 
-### 3. `matlab-run-analyze-fix`
-用于运行 MATLAB 批处理任务，分析结果并协助定位 MATLAB 问题。
+## 文档与内容 Skills
 
-### 4. `student-progress-log`
-用于维护学生项目的中文进展日志。
+6. [`humanizer`](humanizer/)：识别并去除 AI 写作痕迹，使文本更自然。
+7. [`docx`](docx/)：完整处理 `.docx` 创建、编辑、解析、批注和修订痕迹。
+8. [`doc`](doc/)：创建或编辑 `.docx`，重点进行渲染和版式质量检查。
+9. [`doc-coauthoring`](doc-coauthoring/)：分阶段协作撰写提案、技术规范和结构化文档。
+10. [`canvas-design`](canvas-design/)：生成设计导向的静态单页视觉作品（PNG 或 PDF）。
 
-### 5. `publish-skill-to-myskill`
-用于将本地 skill 整理并上传到 `MySkill` 仓库。
+## 实验与项目 Skills
 
-### 6. `git-push-recover`
-用于在 `git push` 失败后诊断网络与代理问题并重试上传。
+11. [`matlab-run-analyze-fix`](matlab-run-analyze-fix/)：运行 MATLAB、分析结果、检查图像并迭代修复代码。
+12. [`student-progress-log`](student-progress-log/)：维护学生项目的中文进展日志和阶段总结。
 
-### 7. `awesome-ai-research-writing`
-论文写作编排 skill。内置本地 Prompt 全集，并联动外部写作相关 skills。
+## GitHub 运维 Skills
 
-### 8. `20-ml-paper-writing`
-面向 NeurIPS / ICML / ICLR / ACL / AAAI / COLM 的完整论文写作与投稿流程。
+13. [`gh-fix-ci`](gh-fix-ci/)：排查和修复 GitHub Actions 中失败的 CI 检查。
+14. [`git-push-recover`](git-push-recover/)：在 `git push` 失败后诊断网络与代理问题并重试。
+15. [`publish-skill-to-myskill`](publish-skill-to-myskill/)：将本地 skill 整理并上传到本仓库。
 
-### 9. `humanizer`
-识别并去除 AI 写作痕迹，使文本更自然、更像人写。
+## 调用建议
 
-### 10. `docx`
-用于 `.docx` 文档创建、编辑、解析与修订痕迹处理。
+- 需要单独使用某个 skill 时，显式点名它，例如：`使用 $论文分析 分析这篇论文`。
+- 需要组合工作流时，可以同时点名多个 skill，或者使用 `awesome-ai-research-writing` 进行论文写作路由。
+- 安装时以具体 skill 子目录为单位，不要把 `paper-skills/` 分类目录整体当成一个 skill。
 
-### 11. `doc-coauthoring`
-分阶段文档协作流程：上下文收集、分节起草、读者测试。
+## 维护约定
 
-### 12. `canvas-design`
-用于生成设计导向的单页视觉产物（`.png` / `.pdf`）。
-
-### 13. `paper-2-web`
-用于把学术论文整理成交互式网页，也覆盖论文海报和论文视频这类展示材料的生成流程。
-
-
-### 14. `paper-reading-html`
-用于把论文整理成精读型 HTML 页面，重点是原文重建、逐段带读、图公式解释，以及整篇文档解读。
-
-### 15. `论文分析`
-用于把学术论文加工成详细中文带读手册和中英对照三色批注译文，并通过 LaTeX 保真排版公式与符号。
-
-## 使用建议
-
-新增 skill 时建议继续保持：
-- 一个 skill 一个文件夹
-- 保留原始 `SKILL.md`
-- 提供可读的 `README.md`
-- 有脚本或参考资料时放在对应子目录
+- 一个 skill 一个独立目录，并保留独立的 `SKILL.md`
+- 分类目录只做仓库整理，不放 `SKILL.md`
+- 新增或移动 skill 时同步更新根目录和分类目录的 README
+- 有脚本、参考资料或模板时放入对应的 `scripts/`、`references/` 或 `assets/`

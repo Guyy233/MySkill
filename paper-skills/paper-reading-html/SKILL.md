@@ -1,6 +1,12 @@
-﻿---
+---
 name: paper-reading-html
-description: Build reading-oriented HTML pages from academic papers, PDFs, or extracted manuscript text. Use when the goal is close reading: keep the paper visible in reading order, render formulas and figures on the page, add paragraph-by-paragraph guided reading, optionally add a Chinese translation column for mainly English source text, and preserve a separate whole-paper interpretation board.
+description: >-
+  Build reading-oriented HTML pages from academic papers, PDFs, or extracted
+  manuscript text. Use when the goal is close reading: keep the paper visible
+  in reading order, render formulas and figures on the page, add
+  paragraph-by-paragraph guided reading, optionally add a Chinese translation
+  column for mainly English source text, and preserve a separate whole-paper
+  interpretation board.
 ---
 
 # Paper Reading HTML
@@ -56,7 +62,7 @@ Use this skill when the user wants **论文网页化 + 全文带读 + 全文解�
 
 ```bash
 cd D:\study\A_finalyear_prj
-python -B MySkill_repo/paper-reading-html/scripts/build_paper_reading_html.py repro
+python -B MySkill_repo/paper-skills/paper-reading-html/scripts/build_paper_reading_html.py repro
 ```
 
 `-B` 参数禁用 `.pyc` 缓存，避免修改脚本后旧缓存仍然生效。
