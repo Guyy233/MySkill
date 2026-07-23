@@ -1,0 +1,52 @@
+% 共用导言区：字体、公式、三色批注盒子、版式
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\setCJKmainfont{PingFang SC}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+
+% ---- 三色批注盒子 ----
+\newtcolorbox{hlg}{enhanced,breakable,colback=green!12,colframe=green!12,
+  boxrule=0pt,arc=0pt,left=6pt,right=6pt,top=3pt,bottom=3pt,before skip=4pt,after skip=4pt}
+\newtcolorbox{hly}{enhanced,breakable,colback=yellow!35,colframe=yellow!35,
+  boxrule=0pt,arc=0pt,left=6pt,right=6pt,top=3pt,bottom=3pt,before skip=4pt,after skip=4pt}
+\newtcolorbox{hlr}{enhanced,breakable,colback=red!15,colframe=red!15,
+  boxrule=0pt,arc=0pt,left=6pt,right=6pt,top=3pt,bottom=3pt,before skip=4pt,after skip=4pt}
+
+% ---- 英文原文块（浅灰色，带竖线，与译文区分） ----
+\newtcolorbox{origtext}{enhanced,breakable,colback=gray!6,colframe=gray!35,
+  boxrule=0pt,leftrule=1.6pt,arc=0pt,left=8pt,right=6pt,top=3pt,bottom=3pt,
+  before skip=6pt,after skip=2pt,fontupper=\itshape\small}
+
+% ---- 提示/要点框 ----
+\newtcolorbox{tip}[1][]{enhanced,breakable,colback=blue!5,colframe=blue!40!black,
+  boxrule=0.6pt,arc=2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,
+  before skip=8pt,after skip=8pt,title={#1},fonttitle=\bfseries,coltitle=white,
+  colbacktitle=blue!40!black}
+
+\newtcolorbox{term}[1][]{enhanced,breakable,colback=gray!4,colframe=gray!60,
+  boxrule=0.4pt,arc=1pt,left=6pt,right=6pt,top=3pt,bottom=3pt,
+  before skip=6pt,after skip=6pt,title={#1},fonttitle=\bfseries,coltitle=black,
+  colbacktitle=gray!25}
+
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{0.6em}{}
+
+\newcommand{\paperEq}[1]{\text{式}~(#1)}
