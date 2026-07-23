@@ -1,4 +1,4 @@
-% 共用导言区：字体、公式、三色批注盒子、版式
+% 共用导言区：字体、公式、三色原句标记、版式
 \usepackage{fontspec}
 \usepackage{amsmath,amssymb,amsfonts,mathtools}
 \usepackage{graphicx}
@@ -29,7 +29,7 @@
 \setlength{\parindent}{2em}
 \setlength{\parskip}{0.35em}
 
-% ---- 三色批注盒子 ----
+% ---- 三色原句标记盒子：只包裹忠实译出的句子，不承载新增批注 ----
 \newtcolorbox{hlg}{enhanced,breakable,colback=green!12,colframe=green!12,
   boxrule=0pt,arc=0pt,left=6pt,right=6pt,top=3pt,bottom=3pt,before skip=4pt,after skip=4pt}
 \newtcolorbox{hly}{enhanced,breakable,colback=yellow!35,colframe=yellow!35,
@@ -41,6 +41,11 @@
 \newtcolorbox{origtext}{enhanced,breakable,colback=gray!6,colframe=gray!35,
   boxrule=0pt,leftrule=1.6pt,arc=0pt,left=8pt,right=6pt,top=3pt,bottom=3pt,
   before skip=6pt,after skip=2pt,fontupper=\itshape\small}
+
+% ---- 普通中文译句块：与单个 origtext 原句一一配对 ----
+\newtcolorbox{translatedtext}{enhanced,breakable,colback=white,colframe=white,
+  boxrule=0pt,arc=0pt,left=8pt,right=6pt,top=2pt,bottom=3pt,
+  before skip=0pt,after skip=6pt}
 
 % ---- 提示/要点框 ----
 \newtcolorbox{tip}[1][]{enhanced,breakable,colback=blue!5,colframe=blue!40!black,

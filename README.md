@@ -24,7 +24,7 @@
 
 1. [`awesome-ai-research-writing`](paper-skills/awesome-ai-research-writing/)：论文写作总路由器，根据任务选择段落 Prompt 或其他写作 skill。
 2. [`20-ml-paper-writing`](paper-skills/20-ml-paper-writing/)：面向 NeurIPS、ICML、ICLR、ACL、AAAI、COLM 和系统会议的完整论文写作与投稿流程。
-3. [`论文分析`](paper-skills/论文分析/)：把论文加工成逐段、逐式、逐图讲解的中文带读手册，以及保留原图、双语图注和图解的中英对照三色批注译文。
+3. [`论文分析`](paper-skills/论文分析/)：生成逐段、逐式、逐图讲解的中文带读手册，以及正文逐句忠实对应、仅图片附带图解的中英对照译文。
 4. [`paper-reading-html`](paper-skills/paper-reading-html/)：把论文整理成保留原文、图和公式的精读型 HTML 页面。
 5. [`paper-2-web`](paper-skills/paper-2-web/)：把论文转成项目网站、展示视频或会议海报。
 
